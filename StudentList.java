@@ -51,7 +51,7 @@ public class StudentList {
 	        String dateTimeFormat = Constants.DATE_TIME_FORMAT;
 	        DateFormat dateFormat = new SimpleDateFormat(dateTimeFormat);
 	        String dateTody= dateFormat.format(date);
-			buffereReader.write(", "+newStudents+"\nList last updated on "+dateTody);
+			buffereReader.write(", "+newStudents+ Constants.LIST_UPDATE_MESSAGE+dateTody);
 			buffereReader.close();
 			} catch (Exception e){}
 							

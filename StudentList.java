@@ -32,14 +32,16 @@ public class StudentList {
 							new FileInputStream("students.txt"))); 
 			String line = buffereReader.readLine();
 			System.out.println(line);
-			String Names[] = line.split(",");	
+			String Names[] = line.split(" ,");	
 			Random random = new Random();
-				int randomNumber = random.nextInt();
+				int randomNumber = random.nextInt(4);
 					System.out.println(Names[randomNumber].trim());
-			} catch (Exception e){} 
+			} catch (Exception e){
+
+			} 
 			System.out.println("Data Loaded.");			
 		}
-		else if(args[0].contains("+")){
+		else if(args[0].contains(" + ")){
 			System.out.println("Loading data ...");			
 			try {
 			BufferedWriter buffereReader = new BufferedWriter(
@@ -55,7 +57,7 @@ public class StudentList {
 							
 			System.out.println("Data Loaded.");	
 		}
-		else if(args[0].contains("?")) 
+		else if(args[0].contains(" ? ")) 
 		{
 			System.out.println("Loading data ...");			
 			try {
@@ -63,19 +65,23 @@ public class StudentList {
 					new InputStreamReader(
 							new FileInputStream("students.txt"))); 
 			String line = buffereReader.readLine();
-			String Names[] =line.split(",");	
+			String Names[] =line.split(" , ");	
 			boolean done = false;
 			String student = args[0].substring(1);
-			for(int index = 0; index<Names.length && !done; index++) {
-				if(Names[index].equals(student)) {
+			for(int index = 0; index<Names.length && !done; index++)
+			 {
+				if(Names[index].equals(student))
+				 {
 					System.out.println("We found it!");
 						done=true;
 				}
 			}
-			} catch (Exception e){} 
+			} catch (Exception e){ 
+
+			} 
 			System.out.println("Data Loaded.");				
 		}
-		else if(args[0].contains("c")) 
+		else if(args[0].contains(" c ")) 
 		{
 			System.out.println("Loading data ...");			
 			try {

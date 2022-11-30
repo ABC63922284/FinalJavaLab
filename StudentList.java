@@ -13,7 +13,7 @@ public class StudentList {
 							new FileInputStream("students.txt"))); 
 			String r = s.readLine();
 			String i[] = r.split(",");			
-			for(String j : i) { System.out.println(j); }
+			for(String j : i) { System.out.println(j.trim()); }
 			} catch (Exception e){} 
 			System.out.println("Data Loaded.");
 		}
@@ -29,7 +29,7 @@ public class StudentList {
 			String i[] = r.split(",");	
 			Random x = new Random();
 				int y = x.nextInt();
-					System.out.println(i[y]);
+					System.out.println(i[y].trim());
 			} catch (Exception e){} 
 			System.out.println("Data Loaded.");			
 		}
@@ -40,7 +40,7 @@ public class StudentList {
 					new FileWriter("students.txt", true));
 			String t = args[0].substring(1);
 	        Date d = new Date();
-	        String df = "dd/mm/yyyy-hh:mm:ss a";
+	        String df = "dd/MM/yyyy-hh:mm:ss a";
 	        DateFormat dateFormat = new SimpleDateFormat(df);
 	        String fd= dateFormat.format(d);
 			s.write(", "+t+"\nList last updated on "+fd);

@@ -89,18 +89,20 @@ public class StudentList {
 					new InputStreamReader(
 							new FileInputStream(Constants.FILE_NAME))); 
 			String D = bufferedReader.readLine();
-			char chr[] = D.toCharArray();			
+			char character[] = D.toCharArray();			
 			boolean in_word = false;
 			int count=0;
-			for(char ch:chr) {
-				if(ch ==' ') 
+			for(char character1:character) {
+				if(character1 ==' ') 
 				{
 					if (!in_word) {	count++; in_word =true;	}
 					else { in_word=false;}			
 				}
 			}
-			System.out.println(count +Constants.FOUND_MESSAGE+ chr.length);
-			} catch (Exception e){} 
+			System.out.println(count +Constants.FOUND_MESSAGE+ character.length);
+			} catch (Exception e){
+				
+			} 
 			System.out.println(Constants.DATA_LOADED);				
 		}
 	}
